@@ -152,6 +152,27 @@ main {
   display: none;
 }
 
+/* Events */
+.container .profile-data .events{
+  /* display: flex; */
+}
+.container .profile-data .events h2{
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.container .profile-data .events ul li{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.container .profile-data .events .repoName{
+  font-weight: 700;
+} 
+
 @media (max-width: 1280px) {
   .container {
     flex-direction: column;
