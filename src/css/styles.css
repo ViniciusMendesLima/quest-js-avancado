@@ -143,10 +143,25 @@ main {
   transition: 0.3s ease-in-out;
 }
 
+.container .profile-data .repositories ul li a .repoInfo{
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  margin-top: 5px;
+}
+
+.container .profile-data .repositories ul li a .repoInfo p{
+  color: #fff;
+  background-color: #800080;
+  border-radius: 5px;
+  padding: 0 3px;
+}
+
 .container .profile-data .repositories ul li a:hover{
   background-color:hotpink;
   color: #fff
 }
+
 
 .container .profile-data.hide{
   display: none;
