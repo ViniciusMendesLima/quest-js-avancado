@@ -1,3 +1,7 @@
+import { user } from "/src/scripts/services/user.js"
+import { repositories } from "/src/scripts/services/repositories.js"
+import { events } from "/src/scripts/services/events.js"
+
 document.getElementById('btn-search').addEventListener('click', () => {
     const userName = document.getElementById('input-search').value
     getUserProfile(userName)
@@ -12,26 +16,6 @@ document.getElementById('input-search').addEventListener('keyup', (e) => {
         getUserProfile(userName)
     }
 })
-
-async function user(userName){
-    const response = await fetch(`https://api.github.com/users/${userName}`)
-    return await response.json()
-}
-
-async function repos(userName){
-    const response = await fetch(`https://api.github.com/users/${userName}/repos`)
-    return await response.json()
-}
-
-async function events(userName){
-    const token = import.meta.env.VITE_GITHUB_TOKEN;
-    const response = await fetch(`https://api.github.com/users/${userName}/events`, {
-        headers: {
-            Authorization: `token ${token}`
-        }
-    })
-    return await response.json()
-}
 
 function getUserProfile(userName){
     user(userName).then(userData=>{
@@ -50,18 +34,14 @@ function getUserProfile(userName){
 
         document.querySelector('.profile-data').innerHTML = userInfo
 
-        getUserRepositories(userName)
         getUserEvents(userName)
+        getUserRepositories(userName)
     })
 }
 
 function getUserRepositories(userName){
-    repos(userName).then(reposData =>{
+    repositories(userName).then(reposData =>{
         let repositoriesItens = ""
-
-        console.log(reposData);
-        
-        
         reposData.forEach(repo => {
             repositoriesItens += `
                                 <li>
