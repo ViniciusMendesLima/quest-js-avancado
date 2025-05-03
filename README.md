@@ -10,7 +10,8 @@ Este projeto é uma aplicação web simples do curso [DevQuest na plataforma cur
 
 ## 🎯 Funcionalidades
 - Buscar informações de qualquer usuário do GitHub digitando o nome de usuário.
-- Exibir foto de perfil, nome e bio do usuário.
+- Exibir foto de perfil, nome, login, bio do usuário, número de seguidores do usuário e número de pessoas que o usuário está seguindo.
+- Listar 10 ultimos eventos públicos.
 - Listar 10 ultimos repositórios públicos.
 - Exibir uma mensagem se o usuário não for encontrado.
 
@@ -28,7 +29,7 @@ Este projeto é uma aplicação web simples do curso [DevQuest na plataforma cur
 Responsável por:
 - Capturar eventos de clique e de tecla (keyup).
 - Validar o campo de busca.
-- Buscar dados do usuário e seus repositórios.
+- Buscar dados do usuário, seus repositórios e eventos.
 
 ### user.js (services)
 - Responsável por buscar os dados do usuário da GitHub API.
@@ -36,15 +37,23 @@ Responsável por:
 ### repositories.js (services)
 Responsável por buscar a lista de repositórios do usuário.
 
+### events.js (services)
+Responsável por buscar a lista de eventos do usuário.
+
 ### screen.js
 Responsável por renderizar:
 - Perfil do usuário
 - Lista de repositórios
+- Lista de eventos
 - Mensagem de "usuário não encontrado"
 
 ### user.js (objects)
 Modelo de objeto que representa o usuário, armazenando:
 - Foto
 - Nome
+- login
 - Bio
+- Seguidores
+- Seguindo
 - Lista de repositórios
+- Lista de eventos
