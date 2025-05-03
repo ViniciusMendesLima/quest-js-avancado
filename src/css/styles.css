@@ -111,8 +111,22 @@ main {
 
 .container .profile-data .info h1{
   font-size: 20px;
-  margin-bottom: 20px;
+
   font-weight: 700;
+}
+
+.container .profile-data .info h3{
+  font-size: 15px;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+.container .profile-data .info .follow{
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
 }
 
 .container .profile-data .info p{

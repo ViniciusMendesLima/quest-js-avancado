@@ -6,10 +6,12 @@ const screen = {
                     <img src='${user.avatarUrl}' alt='Foto do perfil do usuário'/>
                     <div class="data">
                         <h1>${user.name ?? 'Não possui nome cadastrado 😢'}</h1>
-                        <h2>${user.userName}</h2>
+                        <h3>${user.userName}</h3>
                         <p>${user.bio ?? 'Não possui bio cadastrado 😢'}</p>
-                        <p>Followers: ${user.followers}</p>
-                        <p>Following: ${user.following}</p>
+                        <div class="follow">
+                            <p>Followers: ${user.followers}</p>
+                            <p>Following: ${user.following}</p>
+                        </div>
                     </div>
                 </div>`
         
@@ -55,6 +57,9 @@ const screen = {
                             <ul>${repositoriesItens}</ul>
                         </div>`
         }
+    },
+    renderNotFound(){
+        this.userProfile.innerHTML = "<h3>Usuário não encontrado</h3>"
     }
 }
 
