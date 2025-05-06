@@ -18,8 +18,6 @@ const screen = {
                 let eventsItens= ""
                 const eventMessage= "Sem mensagem de commit"
                 user.events.forEach(element => {
-                    console.log(user.events);
-                    
                     if (element.type === "PushEvent") {
                         eventsItens+= `<li>
                         <h3>${element.repo.name}</h3>
