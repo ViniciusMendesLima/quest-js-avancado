@@ -16,15 +16,21 @@ const screen = {
                 </div>`
         
                 let eventsItens= ""
-                user.events.forEach(type => {
-                    let message
-                    if (type.type === "PushEvent") {
-                        message = type.payload.commits[0].message || 'Sem mensagem de commit';
-                    } else {
-                        message = "Sem mensagem de commit"
-                    }
+                const eventMessage= "Sem mensagem de commit"
+                user.events.forEach(element => {
+                    console.log(user.events);
                     
-                    eventsItens += `<li><p class="repoName">${type.repo.name}</p><p>- ${message}</p></li>`
+                    if (element.type === "PushEvent") {
+                        eventsItens+= `<li>
+                        <h3>${element.repo.name}</h3>
+                        <p> -- ${element.payload.commits[0].message}</p>
+                        </li>`
+                    } else {
+                        eventsItens+= `<li>
+                        <h3>${element.repo.name}</h3>
+                        <p> -- ${eventMessage}</p>
+                        </li>`
+                    }
                 })
                 
                 
